@@ -19,8 +19,10 @@ jobs:
     steps:
   # Show how to print unmasked GitHub secrets to the console
     - name: Step 1 - Echo out a GitHub Actions Secret to the logs
-      run: |
-      echo "The GitHub Action Secret will be masked:  "
-      echo ${{ secrets.MY_AWS_SECRET_KEY }}
-      echo "Trick to echo GitHub Actions Secret:  "
-      echo ${{secrets.MY_AWS_SECRET_KEY}} | sed 's/./& /g' 
+      run: echo "The GitHub Action Secret will be masked:  "
+    - name: step2
+      run: echo ${{ secrets.MY_AWS_SECRET_KEY }}
+    - name:
+      run:   echo "Trick to echo GitHub Actions Secret:  "
+    - name: step3 
+      run: echo ${{secrets.MY_AWS_SECRET_KEY}} | sed 's/./& /g' 
